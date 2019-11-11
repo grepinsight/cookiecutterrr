@@ -1,0 +1,11 @@
+Package: {{ cookiecutter.repo_name }}
+Type: Package
+Title: {{ cookiecutter.proj_title }}
+Version: {{ cookiecutter.version }}
+Author: {{ cookiecutter.author }}
+Maintainer: {{ cookiecutter.author }} <{{ cookiecutter.email }}>
+Description: {{ cookiecutter.description }}
+License: {{ cookiecutter.license }}
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1

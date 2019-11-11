@@ -1,0 +1,10 @@
+{
+  "repo_name": "R package name; this name will be used in all git paths; choose carefully",
+  "proj_title": "What the Package Does (Title Case)",
+  "version": "0.1.0",
+  "author" : "Albert Lee",
+  "email" : "Author's email",
+  "license" : "MIT",
+  "description": "Description of your project"
+}
+
