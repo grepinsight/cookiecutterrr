@@ -1,4 +1,7 @@
 PREFIX ?= /usr/local/bin
+PKGNAME = `sed -n "s/Package: *\([^ ]*\)/\1/p" DESCRIPTION`
+PKGVERS = `sed -n "s/Version: *\([^ ]*\)/\1/p" DESCRIPTION`
+
 
 install: doc
 	R CMD INSTALL .
@@ -16,3 +19,20 @@ test-continuous:
 pkgdown:
 	Rscript -e 'pkgdown::build_site()'
 	open docs/index.html
+
+version_patch:
+	Rscript -e 'usethis::use_version("patch")'
+
+version_minor:
+	Rscript -e 'usethis::use_version("minor")'
+
+version_major:
+	Rscript -e 'usethis::use_version("major")'
+
+build:
+	R CMD build .
+
+check: build
+	R CMD check --no-manual $(PKGNAME)_$(PKGVERS).tar.gz
+
+
